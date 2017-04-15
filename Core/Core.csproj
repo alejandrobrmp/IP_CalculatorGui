@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="DataGridView\IPRow.cs" />
     <Compile Include="DataGridView\OutputDataGridViewManager.cs" />
+    <Compile Include="IPaddress\AddressInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Windows.Forms;
 
 namespace Core
@@ -17,7 +18,6 @@ namespace Core
         private void initComponents()
         {
             InitializeComponent();
-
             outputDataGridViewManager = new OutputDataGridViewManager(this.Output_GridView);
         }
 
@@ -49,6 +49,8 @@ namespace Core
 
 
 
+
+
         private void CleanGrid_Button_Click(object sender, EventArgs e)
         {
             outputDataGridViewManager.clearAllRows();
@@ -68,6 +70,23 @@ namespace Core
         private void Deselect_Button_Click(object sender, EventArgs e)
         {
             outputDataGridViewManager.deselectAll();
+        }
+
+        private void Calculate_Button_Click(object sender, EventArgs e)
+        {
+            AddressInfo a = new AddressInfo(AddressInfo.parse(IP_TextBox.Text, IP_TextBox.Name), AddressInfo.parse(Netmask_TextBox.Text, Netmask_TextBox.Name));
+        }
+
+        private void IP_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                Calculate_Button_Click(this, new EventArgs());
+        }
+
+        private void Netmask_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                Calculate_Button_Click(this, new EventArgs());
         }
     }
 }
