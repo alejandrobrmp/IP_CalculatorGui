@@ -11,7 +11,9 @@ namespace Core
     {
         public IPRow(DataGridView dgv, params string[] values)
         {
-            base.CreateCells(dgv);
+            CreateCells(dgv);
+            if (values.Length != Cells.Count)
+                MessageBox.Show("Insercción de datos inconsistente", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             for (int i = 0; i < values.Length; i++)
             {

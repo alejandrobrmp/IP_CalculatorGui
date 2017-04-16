@@ -1,54 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TakeIo.NetworkAddress;
 
 namespace Core
 {
-    public enum addressInfo
-    {
-        ipClass,
-        network,
-        netmask,
-        ipRange,
-        broadcast
-    }
-
     public class AddressInfo
     {
-        private IPAddress IP;
-        private IPAddress NETMASK;
-
-        private char ipClass;
-        private string network;
-        private string netmask;
-        private string ipRange;
-        private string broadcast;
-
-        public AddressInfo(string IP, string NETMASK)
+        private IPNetworkAddress address;
+        public AddressInfo(IPNetworkAddress address)
         {
-            
+            this.address = address;
         }
 
-        public static IPAddress parse(string value, string senderName)
+        public static IPNetworkAddress Parse(string address)
         {
-            try
+            return IPNetworkAddress.Parse(address);
+        }
+
+        public string[] getAllInfo()
+        {
+            string[] info = new string[5];
+
+            info[0] = getClass().ToString();
+            info[1] = address.Network.ToString();
+            info[2] = address.Mask.ToString();
+            info[3] = $"{address.MinAddress.ToString()}-{address.MaxAddress.ToString()}";
+            info[4] = address.Broadcast.ToString();
+
+            return info;
+        }
+
+        private char getClass()
+        {
+            byte[] mask = address.Mask.GetAddressBytes();
+            char[] classes = new char[] { 'A', 'B', 'C'};
+            for (int i = 0; i <= 3; i++)
             {
-                return IPAddress.Parse(value);
+                if (mask[i] != 255)
+                    return classes[--i];
             }
-            catch (ArgumentNullException)
-            {
-                MessageBox.Show($"Se debe introducir un valor como {senderName.Split('_')[0]}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show($"El valor introducido como {senderName.Split('_')[0]} no es válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
+            return '�';
         }
     }
 }

@@ -74,7 +74,23 @@ namespace Core
 
         private void Calculate_Button_Click(object sender, EventArgs e)
         {
-            AddressInfo a = new AddressInfo(AddressInfo.parse(IP_TextBox.Text, IP_TextBox.Name), AddressInfo.parse(Netmask_TextBox.Text, Netmask_TextBox.Name));
+            AddressInfo addressInfo;
+            try
+            {
+                if (string.IsNullOrEmpty(IP_TextBox.Text) || string.IsNullOrEmpty(Netmask_TextBox.Text))
+                    throw new ArgumentException("Se deben introducir los datos requeridos");
+
+                addressInfo = new AddressInfo(AddressInfo.Parse($"{IP_TextBox.Text}/{Netmask_TextBox.Text}"));
+                outputDataGridViewManager.addRow(new IPRow(Output_GridView, addressInfo.getAllInfo()));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                addressInfo = null;
+            }
         }
 
         private void IP_TextBox_KeyDown(object sender, KeyEventArgs e)

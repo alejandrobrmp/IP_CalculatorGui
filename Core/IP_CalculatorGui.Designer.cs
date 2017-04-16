@@ -45,6 +45,7 @@
             this.Máscara = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rango = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Broadcast = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CalculatingInfo_Label = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Output_GridView)).BeginInit();
@@ -124,6 +125,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.CalculatingInfo_Label);
             this.groupBox2.Controls.Add(this.Deselect_Button);
             this.groupBox2.Controls.Add(this.CleanGrid_Button);
             this.groupBox2.Controls.Add(this.Save_Button);
@@ -217,6 +219,14 @@
             this.Broadcast.Name = "Broadcast";
             this.Broadcast.ReadOnly = true;
             // 
+            // CalculatingInfo_Label
+            // 
+            this.CalculatingInfo_Label.AutoSize = true;
+            this.CalculatingInfo_Label.Location = new System.Drawing.Point(6, 18);
+            this.CalculatingInfo_Label.Name = "CalculatingInfo_Label";
+            this.CalculatingInfo_Label.Size = new System.Drawing.Size(0, 13);
+            this.CalculatingInfo_Label.TabIndex = 13;
+            // 
             // IP_Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +240,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Output_GridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -253,6 +264,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Máscara;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rango;
         private System.Windows.Forms.DataGridViewTextBoxColumn Broadcast;
+        private System.Windows.Forms.Label CalculatingInfo_Label;
     }
 }
 

@@ -28,9 +28,9 @@ namespace Core
                     string rowData = "";
                     foreach (DataGridViewCell cell in row.Cells)
                     {
-                        rowData += $" {cell.Value?.ToString()}";
+                        rowData += $" {cell.Value?.ToString()}\t";
                     }
-                    rows.Add(rowData.TrimStart());
+                    rows.Add(rowData.TrimStart().TrimEnd());
                 }
             }
             else
@@ -40,9 +40,9 @@ namespace Core
                     string rowData = "";
                     foreach (DataGridViewCell cell in row.Cells)
                     {
-                        rowData += $" {cell.Value?.ToString()}";
+                        rowData += $" {cell.Value?.ToString()}\t";
                     }
-                    rows.Add(rowData.TrimStart());
+                    rows.Add(rowData.TrimStart().TrimEnd());
                 }
             }
 
