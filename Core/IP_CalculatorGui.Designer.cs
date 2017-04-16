@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.IP_TextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CalculatingInfo_Label = new System.Windows.Forms.Label();
             this.Deselect_Button = new System.Windows.Forms.Button();
             this.CleanGrid_Button = new System.Windows.Forms.Button();
             this.Save_Button = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.Máscara = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rango = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Broadcast = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CalculatingInfo_Label = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Output_GridView)).BeginInit();
@@ -136,6 +136,14 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
+            // CalculatingInfo_Label
+            // 
+            this.CalculatingInfo_Label.AutoSize = true;
+            this.CalculatingInfo_Label.Location = new System.Drawing.Point(6, 18);
+            this.CalculatingInfo_Label.Name = "CalculatingInfo_Label";
+            this.CalculatingInfo_Label.Size = new System.Drawing.Size(0, 13);
+            this.CalculatingInfo_Label.TabIndex = 13;
+            // 
             // Deselect_Button
             // 
             this.Deselect_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -143,7 +151,7 @@
             this.Deselect_Button.Name = "Deselect_Button";
             this.Deselect_Button.Size = new System.Drawing.Size(94, 23);
             this.Deselect_Button.TabIndex = 12;
-            this.Deselect_Button.Text = "Desseleccionar";
+            this.Deselect_Button.Text = "Deseleccionar";
             this.Deselect_Button.UseVisualStyleBackColor = true;
             this.Deselect_Button.Click += new System.EventHandler(this.Deselect_Button_Click);
             // 
@@ -218,14 +226,6 @@
             this.Broadcast.HeaderText = "Broadcast";
             this.Broadcast.Name = "Broadcast";
             this.Broadcast.ReadOnly = true;
-            // 
-            // CalculatingInfo_Label
-            // 
-            this.CalculatingInfo_Label.AutoSize = true;
-            this.CalculatingInfo_Label.Location = new System.Drawing.Point(6, 18);
-            this.CalculatingInfo_Label.Name = "CalculatingInfo_Label";
-            this.CalculatingInfo_Label.Size = new System.Drawing.Size(0, 13);
-            this.CalculatingInfo_Label.TabIndex = 13;
             // 
             // IP_Calculator
             // 
